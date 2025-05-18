@@ -1,0 +1,16 @@
+# --- Core GPIO & robotics helpers ---
+gpiozero
+pigpio
+# --- Vision and tag detection ---
+opencv-python>=4.10
+pupil-apriltags
+pyzbar
+
+# --- Graph search & data wrangling ---
+networkx
+numpy
+python-math
+
+# --- Debugging & visualization ---
+matplotlib
+pygame
