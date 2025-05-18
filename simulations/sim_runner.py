@@ -1,7 +1,15 @@
-from types import SimpleNamespace
-from env_and_robot import MAZE_EDGES, MAZE_JUNCTIONS
+#!../venv/bin/python3
+
+# Add parent directory to sys.path
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Imports:
 import pygame, math, gpiozero
 import Python.line_follow as lf
+from types import SimpleNamespace
+from env_and_robot import MAZE_EDGES, MAZE_JUNCTIONS
 from gpiozero.pins.mock import MockFactory
 from Python.line_follow import GPIO_LEFT, GPIO_RIGHT
 
@@ -11,7 +19,7 @@ class SimSensor:
     def __init__(self, idx):
         self.idx = idx
 
-    @property
+    #@propertImagesy
     def value(self):
         # Dinamyc
         val = robot.read_sensor(self.idx, environment.map)
@@ -41,7 +49,8 @@ dims = (600, 1200)
 environment = Envir(dims)
 environment.map.fill(environment.white)
 environment.draw_maze()
-robot = Robot(startpos=MAZE_JUNCTIONS[1], robotImg=r"C:\Users\Utente\OneDrive\Desktop\Maze_Bot\Bot Images\sampleBot.png",
+
+robot = Robot(startpos=MAZE_JUNCTIONS[1], robotImg=r"../static/images/sampleBot.png",
               width=0.01*3779.52)
 
 print_sensor = True
