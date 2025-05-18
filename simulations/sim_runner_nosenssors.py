@@ -1,3 +1,11 @@
+#!../venv/bin/python3
+
+# Add parent directory to sys.path
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Imports:
 import pygame, math, networkx as nx
 from env_and_robot import MAZE_EDGES, MAZE_JUNCTIONS, Envir, Robot
 from Python.MyGraph import MyGraph
@@ -52,7 +60,7 @@ clock = pygame.time.Clock()
 environment = Envir((600, 1200))
 robot = Robot(
     startpos=MAZE_JUNCTIONS[start_node],
-    robotImg=r"C:\Users\Utente\OneDrive\Desktop\Maze_Bot\Bot Images\sampleBot.png",
+    robotImg="../static/images/sampleBot.png",
     width=0.01*3779.52
 )
 
