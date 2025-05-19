@@ -6,7 +6,13 @@
 
 [Chassis Driver Demonstration](https://youtu.be/iw_Xe_JajT4?si=0qx1W1s7F3d5nseO)
 
+# Materials
+
 [3D-printed Base](https://www.thingiverse.com/thing:1562194)
+
+[Raspberry Pi 3b](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
+
+[ArduCam IMX708](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/12MP-IMX708/#raspberry-pi-native-camera)
 
 # rpi prep:
 - Install rpi minimal
