@@ -122,7 +122,7 @@ environment=Envir(dims)
 
 # The robot
 robot = Robot(start, 
-              r"C:\Users\Utente\OneDrive\Desktop\Maze Bot\Bot Images\sampleBot.png",
+              "../static/images/sampleBot.png",
               0.01*3779.52)
 
 # Delta time
