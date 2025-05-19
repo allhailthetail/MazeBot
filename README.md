@@ -1,6 +1,8 @@
 # boenanna-pi
 Raspberry Pi controlling a BOE Bot chassis
 
+![Animated GIF](static/mages/maze_animation.gif)
+
 [Chassis Driver Demonstration](https://youtu.be/iw_Xe_JajT4?si=0qx1W1s7F3d5nseO)
 
 [3D-printed Base](https://www.thingiverse.com/thing:1562194)
