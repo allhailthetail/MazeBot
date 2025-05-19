@@ -1,10 +1,17 @@
+# Add parent directory to sys.path
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../python')))
+
 import pygame, math, gpiozero
 from types import SimpleNamespace
-from env_and_robot import Envir, Robot
-from Maze import SimWheelBase
-from ..Python.line_follow import TapeFollower
-from ..Python.graph_builder import MazeGraph
-from ..Python.heading_utils import heading_lookup
+from MazeBotML.env_and_robot import Envir, Robot
+#from MazeBotML.sim_motor.py import SimWheelBase
+from MazeBotML.sim_motor import SimWheelBase
+from MazeBotML.line_follow import TapeFollower
+from MazeBotML.graph_builder import MazeGraph
+from MazeBotML.heading_utils import heading_lookup
+from MazeBotML.line_follow import GPIO_LEFT, GPIO_RIGHT
 
 
 
@@ -16,7 +23,6 @@ def make_sensor(idx):
 
 # Disable real pins and replace DigitalInputDevice with lambda
 gpiozero.Device.pin_factory = None
-from ..Python.line_follow import GPIO_LEFT, GPIO_RIGHT
 gpiozero.DigitalInputDevice = lambda pin: make_sensor(
     0 if pin == GPIO_LEFT else 1
 ) 
@@ -36,7 +42,7 @@ environment=Envir(dims)
 
 # The robot
 robot = Robot(start, 
-              r"C:\Users\Utente\OneDrive\Desktop\Maze Bot\Bot Images\sampleBot.png",
+              "../static/images/sampleBot.png",
               0.01*3779.52)
 
 # Delta time
@@ -48,7 +54,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running=False
-        robot.move(event)
+        robot.move(event) #TODO fix? move(self,dt)
 
     dt = (pygame.time.get_ticks() - last_time) / 1000 
     last_time = pygame.time.get_ticks()

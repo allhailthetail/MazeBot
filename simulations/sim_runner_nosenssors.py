@@ -4,11 +4,12 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../python')))
 
 # Imports:
 import pygame, math, networkx as nx
-from env_and_robot import MAZE_EDGES, MAZE_JUNCTIONS, Envir, Robot
-from Python.MyGraph import MyGraph
+from MazeBotML.env_and_robot import MAZE_EDGES, MAZE_JUNCTIONS, Envir, Robot
+from MazeBotML.MyGraph import MyGraph
 
 # Keep sprite in sync with pose
 def refresh_sprite(r):

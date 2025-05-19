@@ -1,14 +1,22 @@
+#!../venv/bin/python3
+# Add parent directory to sys.path
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../python')))
+
 import gpiozero
 from gpiozero.pins.mock import MockFactory, MockPin 
-from ..Python.motor_driver import WheelBase
-from ..Python.line_follow import TapeFollower
-from ..Python.graph_builder import MazeGraph
+from MazeBotML.line_follow import TapeFollower
+from MazeBotML.graph_builder import MazeGraph
+
+from MazeBotML.motor_driver import WheelBase #TODO replace with PiBoe driver
 
 # Monkey-patch gpiozero to "pretend" it's connected to a pi
 gpiozero.Device.pin_factory = MockFactory()
 
 # Fake wheelbase
-wb = WheelBase()
+wb = WheelBase() #TODO replace with PiBoe Driver...
 
 # Feed canned sensor + tag events
 tf = TapeFollower(wb)
