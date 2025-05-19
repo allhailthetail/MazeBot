@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import networkx as nx
 from env_and_robot import MAZE_JUNCTIONS, MAZE_EDGES, Envir, Robot
 import time
